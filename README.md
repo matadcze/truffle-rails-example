@@ -1,57 +1,24 @@
-# Truffle Ruby, Rails and Docker Starter
+# README
 
-#####
- Minimal starter for Truffle Ruby and Rails 6 application with Docker, Postgresql and Redis databases
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-* **[Truffle Ruby](https://github.com/oracle/truffleruby)**
-* **[Rails](https://rubyonrails.org/)**
-* **[Docker](https://www.docker.com/)**
-* **[Postgresql](https://www.postgresql.org/)**
-* **[Redis](https://redis.io/)**
+Things you may want to cover:
 
-### Up&Running
+* Ruby version
 
-#### Clone the repository
-`git clone git@github.com:mc2dx/truffle-rails-starter.git your-project`
+* System dependencies
 
-`cd your-project`
+* Configuration
 
-#### Generate new Rails application
+* Database creation
 
-`docker-compose run web rails new . --database=postgresql`
+* Database initialization
 
-#### Build a Docker image
+* How to run the test suite
 
-`docker-compose build`
+* Services (job queues, cache servers, search engines, etc.)
 
-#### Copy database configuration below and paste to `config/database.yml` file
+* Deployment instructions
 
-```
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: db
-  username: postgres
-  password:
-
-development:
-  <<: *default
-  database: myapp_development
-
-test:
-  <<: *default
-  database: myapp_test
-
-production:
-  <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
-```
-#### Create databases
-`docker-compose run web rake db:create`
-#### Run application
-`docker-compose up`
-#### Open browser and type URL
-`http://localhost:8081`
+* ...
